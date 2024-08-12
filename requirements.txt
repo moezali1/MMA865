@@ -6,3 +6,10 @@ gensim
 spacy
 fastapi
 uvicorn
+openai
+transformers
+matploblib
+seaborn
+plotly
+PyPDF2
+gensim
