@@ -45,7 +45,7 @@
 
    - Open Terminal or Anaconda Prompt and create a new conda environment named `mma865` with the following command:
      ```
-     conda create --name rai7004 python=3.11
+     conda create --name mma865 python=3.11
      ```
    - Activate the conda environment:
      ```
