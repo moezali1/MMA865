@@ -13,3 +13,4 @@ seaborn
 plotly
 PyPDF2
 gensim
+pyLDAvis
