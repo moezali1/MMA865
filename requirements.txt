@@ -10,7 +10,7 @@ openai
 transformers
 matploblib
 seaborn
-plotly
 PyPDF2
 gensim
 pyLDAvis
+plotly
