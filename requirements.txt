@@ -14,3 +14,9 @@ PyPDF2
 gensim
 pyLDAvis
 plotly
+newspaper3k
+lxml_html_clean
+textblob
+transformers
+torch
+shap
