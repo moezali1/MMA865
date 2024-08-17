@@ -83,8 +83,13 @@
      ```
    - This command reads the `requirements.txt` file in the current directory and installs all the libraries listed there.
 
+   - One of the library needed for this repo is spacy. Once spacy is installed you will have to download the NLP model separately by running the following code in your command line. You only have to do this once.
+     ```
+     python -m spacy download en_core_web_sm
+     ```
+
 ## Data
 
-For labs where a data file is needed, the data is stored as a CSV file in the respective folder. 
+For labs where a data file is needed, the data is stored in the respective folder. 
 
 Thank you
