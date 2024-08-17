@@ -8,7 +8,7 @@ fastapi
 uvicorn
 openai
 transformers
-matploblib
+matplotlib
 seaborn
 PyPDF2
 gensim
