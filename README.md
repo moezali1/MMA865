@@ -88,6 +88,16 @@
      python -m spacy download en_core_web_sm
      ```
 
+8. **git pull:**
+
+   - Labs will be updated continiously throughout the course. `requirements.txt` may also get updated several times. It is recommended that you run the following code before every class to ensure you have the most up to date repo and requirements.
+     ```
+     cd mma865 #navigate the repo folder
+     git pull #get the latest repo
+     conda activate mma865 #activate conda env
+     pip install -r requirements.txt #install requirements.txt file
+     ```
+
 ## Data
 
 For labs where a data file is needed, the data is stored in the respective folder. 
