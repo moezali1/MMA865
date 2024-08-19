@@ -92,10 +92,10 @@
 
    - Labs will be updated continiously throughout the course. `requirements.txt` may also get updated several times. It is recommended that you run the following code before every class to ensure you have the most up to date repo and requirements.
      ```
-     cd mma865 #navigate the repo folder
-     git pull #get the latest repo
-     conda activate mma865 #activate conda env
-     pip install -r requirements.txt #install requirements.txt file
+     cd mma865
+     git pull
+     conda activate mma865
+     pip install -r requirements.txt
      ```
 
 ## Data
