@@ -1,0 +1,88 @@
+﻿Post_ID,Text
+1,"Normalization is a technique often applied as part of data preparation before training machine learning models. The goal of normalization is to rescale the values of numeric features in the dataset without distorting differences in the ranges of values or losing information.
+
+This can be achieved in PyCaret using the normalize parameter within the setup. There are several methods available for normalization, by default it uses ‘zscore’ to normalize the data, which can be changed using the normalize_method parameter within setup."
+2,"Training a Machine Learning Model in PyCaret extremely simple and can be done by using the create_model function. It takes only one parameter i.e. the Model ID as a string.
+
+For supervised modules (classification and regression) this function returns a table with k-fold cross-validated performance metrics along with the trained model object.
+
+For the unsupervised clustering module, it returns performance metrics along with the trained model object, and for anomaly detection, natural language processing, and association rule mining modules, it only returns the trained model object.
+
+The number of folds can be defined using the 'fold' parameter (by default it uses 10 folds). To just train a model without the need for any performance evaluation you can set the 'cross_validation' to False.
+
+See example code below"
+3,"If an AI algorithm turns the copyrighted work into a profitable technology, then it wouldn’t be out of the realm of possibility that its creator should pay or otherwise credit for what they take.
+
+Whats your take on this?"
+4,"Do you know you can write nested functions in PyCaret 👇
+
+You can nest functions in PyCaret and create something really powerful without impacting the readability of the code. For example:
+
+>>> tuned_dt = tune_model(create_model('dt'))
+
+It will execute the innermost function first and pass the output to the outer function. In the case above, it will first train a decision tree model using default hyperparameters and pass it to tune_model to tune the hyperparameters.
+
+You can nest more than this:
+
+>>> best_dt = ensemble_model(tune_model(create_model('dt')))
+
+You can also set choose_better = True to ensure that the final output (from the most outer function is the best performing model among all).
+
+>>> best_dt = ensemble_model(tune_model(create_model('dt'), choose_better=True), choose_better=True)
+
+Instead of using the create_model in the innermost layer, you can use compare_models. This will basically create a simple AutoML (train bunch of models --> select best model --> tune hyperparameters of the selected model --> ensemble the selected model with optimized hyperparameters)
+
+>>> best_model = ensemble_model(tune_model(compare_models(), choose_better = True), choose_better=True)"
+5,"Have you still not used PyCaret? Maybe it's time to replace your old boilerplate ML code with PyCaret. Here are 5 reasons why you should start using PyCaret now 
+
+Makes you fast and efficient. Save time and help you find the best model faster.
+Search and productionalize high-performing ML models efficiently.
+Makes your code more readable (proof: see image).
+Help you stay organized and take away the hassle of maintaining files, versions, metrics, and parameters manually.
+It's a tool built for teams. With MLFlow back-end, data science and data engineering teams can collaborate easily."
+6,"Comparing estimators at the base level performance is really important in machine learning. However, training and evaluating multiple estimators with consistent fold strategy and comparing the results in easy to understand way require some amount of coding, time, and patience. The complexity is increased further if the estimators you are comparing have different API style (scikit-learn vs. non scikit-learn).
+
+compare_models function in PyCaret solves this problem by training all the estimators available in the model library and evaluates multiple performance metrics using cross-validation strategies. The model library of PyCaret is richer than the base scikit-learn as it combines scikit-learn + other libraries such as XGBoost, Microsoft's LightGBM, Catboost, etc.
+
+The output of the compare_models function is a table with the averaged fold score. The number of folds can be defined using the 'fold' parameter and the output is sorted (highest to lowest) by the metric of choice which can be defined using the 'sort' parameter.
+
+To exclude certain models from training you can use the 'exclude' parameter or compare only a few select models you can use the 'include' parameter.
+
+see code below"
+7,"In this tutorial, I will show you how you can train and deploy machine learning pipelines in a very popular ETL tool Alteryx using PyCaret — an open-source, low-code machine learning library in Python. The Learning Goals of this tutorial are:
+
+What is PyCaret and how to get started?
+
+What is Alteryx Designer and how to set it up?
+
+Train end-to-end machine learning pipeline in Alteryx Designer including data preparation such as missing value imputation, one-hot-encoding, scaling, transformations, etc.
+
+Deploy trained pipeline and generate inference during ETL."
+8,"I know both are desirable but If I have to choose between the data scientist with mathematics and data scientist with programming and execution skills. I will choose the later.
+
+If I have to hire 4 Data Scientists. I will hire:
+- two for experiment design & execution
+- one for MLOps shop
+- one for use-case research (thats where I prefer someone with problem solving skills that include maths, op research, etc.)
+
+I can live without that last one if I don’t want to expand and just keep maintaining the existing data science workload. Its usually an investment.
+
+What will you do?"
+9,"Time Series Forecasting with PyCaret Regression Module
+
+PyCaret Regression Module is a supervised machine learning module used for estimating the relationships between a dependent variable (often called the ‘outcome variable’, or ‘target’) and one or more independent variables (often called ‘features’, or ‘predictors’).
+
+The objective of regression is to predict continuous values such as sales amount, quantity, temperature, number of customers, etc. All modules in PyCaret provide many pre-processing features to prepare the data for modeling through the setup function. It has over 25 ready-to-use algorithms and several plots to analyze the performance of trained models.
+
+Time series forecasting can broadly be categorized into the following categories:
+
+- Classical / Statistical Models — Moving Averages, Exponential smoothing, ARIMA, SARIMA, TBATS
+- Machine Learning — Linear Regression, XGBoost, Random Forest, or any ML model with reduction methods
+- Deep Learning — RNN, LSTM
+
+This tutorial is focused on the second category i.e. Machine Learning."
+10,"Semi-supervised learning is an approach to machine learning that combines a small amount of labeled data with a large amount of unlabeled data during training.
+
+Semi-supervised learning falls between unsupervised learning (with no labeled training data) and supervised learning (with only labeled training data).
+
+A common example of an application of semi-supervised learning is a text document classifier. This is the type of situation where semi-supervised learning is ideal because it would be nearly impossible to find a large number of labeled text documents. So, semi-supervised learning allows for the algorithm to learn from a small number of labeled text documents while still classifying a large number of unlabeled text documents in the training data."
