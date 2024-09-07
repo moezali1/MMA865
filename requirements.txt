@@ -20,3 +20,4 @@ textblob
 transformers
 torch
 shap
+embedchain
