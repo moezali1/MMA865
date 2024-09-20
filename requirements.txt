@@ -21,3 +21,4 @@ transformers
 torch
 shap
 embedchain
+mlflow
