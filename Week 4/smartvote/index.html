@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 🍁Liberal Party Platform Explorer</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .search-section {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .search-box {
+            display: flex;
+            gap: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        input {
+            flex: 1;
+            padding: 1rem;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #2196f3;
+        }
+
+        button {
+            padding: 1rem 2rem;
+            background-color: #2196f3;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #1976d2;
+        }
+
+        .chips-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            justify-content: center;
+            margin-top: 1.5rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .chip {
+            padding: 0.6rem 1.2rem;
+            background-color: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: #666;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .chip:hover {
+            background-color: #2196f3;
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .analysis-section {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .analysis-section h2 {
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .analysis-content {
+            line-height: 1.6;
+        }
+
+        .analysis-content strong {
+            color: #2196f3;
+        }
+
+        .documents-section {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .document-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .document-card:hover {
+            transform: translateY(-5px);
+            background-color: #f0f8ff;
+        }
+
+        .document-card:hover .text {
+            white-space: normal;
+            overflow: visible;
+            text-overflow: unset;
+            max-height: none;
+        }
+
+        .score {
+            color: #2196f3;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .page {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        .text {
+            color: #333;
+            line-height: 1.6;
+            transition: all 0.3s ease;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-height: 100px;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        /* Spinner Styles */
+        .spinner {
+            width: 40px;
+            height: 40px;
+            margin: 20px auto;
+            border: 4px solid #f3f3f3;
+            border-top: 4px solid #2196f3;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="search-section">
+            <h1 style="margin-bottom: 2rem; color: #333;"> 🍁Liberal Party Platform Explorer</h1>
+            <div class="search-box">
+                <input type="text" id="queryInput" placeholder="Ask about party policies...">
+                <button onclick="submitQuery()">Search</button>
+            </div>
+            <div class="chips-container">
+                <div class="chip" onclick="setQuery('What is the policy on healthcare?')">Healthcare Policy</div>
+                <div class="chip" onclick="setQuery('How does the party plan to address climate change?')">Climate
+                    Change</div>
+                <div class="chip" onclick="setQuery('What are the plans for affordable housing?')">Affordable Housing
+                </div>
+                <div class="chip" onclick="setQuery('How will education funding be improved?')">Education Funding</div>
+                <div class="chip" onclick="setQuery('What is the stance on job creation?')">Job Creation</div>
+                <div class="chip" onclick="setQuery('What are the party\'s tax policies?')">Tax Policies</div>
+                <div class="chip" onclick="setQuery('How does the party support small businesses?')">Small Business
+                    Support</div>
+            </div>
+        </div>
+
+        <div id="spinner" class="hidden">
+            <div class="spinner"></div>
+        </div>
+
+        <div id="results" class="hidden">
+            <div class="analysis-section">
+                <h2>Analysis</h2>
+                <div id="analysis" class="analysis-content"></div>
+            </div>
+
+            <h2 style="margin: 2rem 0 1rem 0; color: #333;">Related Documents</h2>
+            <div id="documents" class="documents-section"></div>
+        </div>
+    </div>
+
+    <script>
+        function setQuery(text) {
+            const input = document.getElementById('queryInput');
+            input.value = text;
+            submitQuery();
+        }
+
+        async function submitQuery() {
+            const query = document.getElementById('queryInput').value;
+            if (!query.trim()) return;
+
+            // Show spinner, hide results
+            document.getElementById('spinner').classList.remove('hidden');
+            document.getElementById('results').classList.add('hidden');
+
+            try {
+                const response = await fetch('http://localhost:8000/query', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({ text: query })
+                });
+
+                const data = await response.json();
+                displayResults(data);
+            } catch (error) {
+                console.error('Error:', error);
+            } finally {
+                // Hide spinner regardless of success/failure
+                document.getElementById('spinner').classList.add('hidden');
+            }
+        }
+
+        function displayResults(data) {
+            document.getElementById('results').classList.remove('hidden');
+
+            // Convert markdown to HTML and display analysis
+            const analysisHtml = data.analysis.response
+                .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')  // Bold text
+                .split('\n').join('<br>');  // Line breaks
+            document.getElementById('analysis').innerHTML = analysisHtml;
+
+            // Display all documents
+            const documentsContainer = document.getElementById('documents');
+            documentsContainer.innerHTML = '';
+
+            data.similar_documents.forEach(doc => {
+                const card = document.createElement('div');
+                card.className = 'document-card';
+                card.innerHTML = `
+                    <div class="score">Similarity: ${(doc.score * 100).toFixed(1)}%</div>
+                    <div class="page">Page ${doc.page}</div>
+                    <div class="text">${doc.text}</div>
+                `;
+                documentsContainer.appendChild(card);
+            });
+        }
+
+        // Allow Enter key to submit
+        document.getElementById('queryInput').addEventListener('keypress', function (e) {
+            if (e.key === 'Enter') {
+                submitQuery();
+            }
+        });
+    </script>
+</body>
+
+</html>

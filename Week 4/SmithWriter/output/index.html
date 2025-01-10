@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmithWriter Blog Index</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 2rem;
+            background: #f8f9fa;
+            color: #343a40;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #212529;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            font-weight: 300;
+        }
+
+        .blog-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 1rem;
+        }
+
+        .blog-card {
+            background: white;
+            border-radius: 8px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .blog-card a {
+            text-decoration: none;
+            color: #495057;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .blog-card a:hover {
+            color: #228be6;
+        }
+
+        .blog-subtitle {
+            color: #6c757d;
+            font-size: 0.9rem;
+            margin: 0.5rem 0;
+        }
+
+        .blog-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .tag {
+            background: #e9ecef;
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            color: #495057;
+        }
+
+        .category {
+            color: #228be6;
+            font-size: 0.8rem;
+            margin-top: 0.5rem;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>SmithWriter Blog Collection</h1>
+        <div class="blog-grid" id="blogContainer">
+            <script>
+                // Function to fetch blog posts from MongoDB
+                async function fetchBlogs() {
+                    try {
+                        const response = await fetch('http://localhost:8000/get_blogs', {
+                            method: 'GET',
+                            headers: {
+                                'Accept': 'application/json',
+                                'Content-Type': 'application/json'
+                            },
+                            mode: 'cors'
+                        });
+
+                        if (!response.ok) {
+                            throw new Error(`HTTP error! status: ${response.status}`);
+                        }
+
+                        const data = await response.json();
+                        console.log('Fetched blogs:', data); // Debug log
+
+                        const blogContainer = document.getElementById('blogContainer');
+                        blogContainer.innerHTML = ''; // Clear existing content
+
+                        if (!data.blogs || data.blogs.length === 0) {
+                            blogContainer.innerHTML = '<p>No blogs found</p>';
+                            return;
+                        }
+
+                        data.blogs.forEach(blog => {
+                            console.log('Processing blog:', blog); // Debug log
+                            if (!blog || !blog.title) return;
+
+                            const blogCard = document.createElement('div');
+                            blogCard.className = 'blog-card';
+
+                            const link = document.createElement('a');
+                            link.href = `blog_${blog._id.$oid}.html`;
+                            link.textContent = blog.title;
+
+                            const subtitle = document.createElement('div');
+                            subtitle.className = 'blog-subtitle';
+                            subtitle.textContent = blog.subtitle;
+
+                            const category = document.createElement('div');
+                            category.className = 'category';
+                            category.textContent = blog.metadata?.meta_category || '';
+
+                            const tagsContainer = document.createElement('div');
+                            tagsContainer.className = 'blog-tags';
+                            if (blog.metadata?.meta_tags) {
+                                blog.metadata.meta_tags.forEach(tag => {
+                                    const tagElement = document.createElement('span');
+                                    tagElement.className = 'tag';
+                                    tagElement.textContent = tag;
+                                    tagsContainer.appendChild(tagElement);
+                                });
+                            }
+
+                            blogCard.appendChild(link);
+                            blogCard.appendChild(subtitle);
+                            blogCard.appendChild(category);
+                            blogCard.appendChild(tagsContainer);
+                            blogContainer.appendChild(blogCard);
+                        });
+                    } catch (error) {
+                        console.error('Detailed error:', error); // More detailed error logging
+                        const blogContainer = document.getElementById('blogContainer');
+                        blogContainer.innerHTML = `<p>Error loading blogs: ${error.message}</p>`;
+                    }
+                }
+
+                // Fetch blogs when page loads
+                document.addEventListener('DOMContentLoaded', fetchBlogs);
+            </script>
+        </div>
+    </div>
+</body>
+
+</html>

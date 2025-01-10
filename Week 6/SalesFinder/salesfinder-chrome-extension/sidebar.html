@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>LinkedIn Sales Finder</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="marked.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>LinkedIn Sales Finder</h1>
+        </header>
+
+        <button id="draftEmail" class="button">Draft Email</button>
+
+        <div id="result" class="result-container hidden">
+            <!-- Add this div for the copy button -->
+            <div class="result-header">
+                <button id="copyButton" class="copy-button">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                        <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                    </svg>
+                    Copy
+                </button>
+            </div>
+            <div id="spinner" class="spinner hidden"></div>
+            <div id="emailContent" class="email-content"></div>
+        </div>
+    </div>
+    <script src="sidebar.js"></script>
+</body>
+
+</html>

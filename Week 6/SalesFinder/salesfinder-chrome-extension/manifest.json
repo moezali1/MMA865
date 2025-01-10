@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "LinkedIn Sales Finder",
+    "version": "1.0",
+    "description": "Generate sales emails from LinkedIn content",
+    "permissions": [
+        "activeTab",
+        "scripting",
+        "sidePanel"
+    ],
+    "host_permissions": [
+        "http://localhost:8000/*",
+        "https://*/*"
+    ],
+    "action": {
+        "default_title": "LinkedIn Sales Finder"
+    },
+    "background": {
+        "service_worker": "background.js",
+        "type": "module"
+    },
+    "side_panel": {
+        "default_path": "sidebar.html"
+    }
+}
