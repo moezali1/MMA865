@@ -1,0 +1,64 @@
+{
+    "courses": [
+        {
+            "title": "Introduction to Management",
+            "description": "This course introduces the main functional areas of business including strategy, marketing, operations and finance, and demonstrates how these areas interact to produce and market products and/or services effectively and efficiently. It is designed to ensure all students, regardless of background or experience, are equipped to place the management of AI in the context of general business management. It provides a broad perspective of management theories and their application in the business and public sectors. This includes an overview of the modern corporate enterprise in Canadian and international context, and of the tasks, practices, and responsibilities of its managers. Critical thinking and problem solving, coupled with teamwork and communication skills development are fundamental to the course intent and delivery. There is a focus on leadership requirements and the need to understand and develop broad-based business competencies. The impact of culture on business model execution is also covered."
+        },
+        {
+            "title": "High-Performance Teams",
+            "description": "Creating, leading or contributing to a high performance team are critical skills for managers today and vital for working on transformative AI applications. This course will build an understanding of the key elements of a high-performance team, and what leads to team effectiveness. The course blends business theory and real-world insights to teach the skills needed to better lead people and teams within any type of organization. Key topics include self-awareness, building trust, communication, conflict management, team dynamics, and how to build a healthy team culture. During the course, students are led through a set of practical sessions that reveal a five-step process for building high-performance teams. The knowledge gained and the skill set developed are immediately transferable to the work place."
+        },
+        {
+            "title": "Mathematics for Artificial Intelligence",
+            "description": "This course introduces important mathematical foundations and development tools and their applications to the design of AI algorithms. It is designed for the management role, teaching essential foundational concepts and the notations used to express AI mathematical basics. The course provides a hands-on approach to working with data and applying the techniques. This course begins with a review of the fundamental statistical and mathematical concepts used in unsupervised and supervised learning. It also explores the variety of AI solutions and how they can be implemented using platform-as-a-service tools."
+        },
+        {
+            "title": "Machine Learning and AI Technology",
+            "description": "This course covers machine learning (ML) and AI methods and their implementation in state-of-the-art tools and packages. Through lectures, case studies, and readings, students will gain a broad understanding of ML concepts, and will understand how to use ML as a way of thinking. Students will also develop a proficiency in building ML and AI applications — using modern tools and packages to solve real-world business problems. This course will include an introduction to machine learning, data mining, and statistical pattern recognition. Technical topics will include: supervised learning e.g., decision trees, Naïve Bayes, support vector machines, neural networks; unsupervised learning e.g., clustering, dimensionality reduction, recommender systems; best practices in building machine learning applications e.g., bias/variance theory, model evaluation, feature engineering and selection, hybrid models; and the practical implementation of ML applications using modern tools and packages e.g., R, Python, and cloud-based services."
+        },
+        {
+            "title": "Analytical Decision Making",
+            "description": "This course focuses on fundamental concepts of sound analytical thinking that can be applied in wide contexts. We explore the use of analytical methods in management problem-solving, highlighting organizational and contextual issues. We study how to construct an analytical model of a problem that can be used to identify a decision that yields the best outcome, according to defined criteria. Key concepts like understanding variation, perceiving relative risk of alternative decisions, and pinpointing sources of variation will be highlighted. This course will explore several decision-making frameworks including optimization, simulation, and decision analysis. The challenges of communicating and implementing results in an organizational context will also be explored through mini-cases and illustrations."
+        },
+        {
+            "title": "Natural Language Processing",
+            "description": "This course focuses on text analytics, with a particular emphasis on natural language processing (NLP) techniques to organize, understand, and derive insights from unstructured textual data sources. The course will touch on theory but focus on practical business applications. Using assignments and case studies, students will get hands-on experience with the entire text analytics process. Students will learn how to perform the process across a variety of business units including marketing, HR, customer support, sales, R&D, and finance, as well as across industries including banking and finance, retail, technology, transportation, education, and government."
+        },
+        {
+            "title": "Deep Learning",
+            "description": "This course covers the foundations of deep neural networks and their application to solving practical industry problems. Students will not only master the theory, but gain practical knowledge on how deep learning is applied in industry. Topics include neural network representations, activation functions, optimization algorithms, back propagation, parameter and hyperparameter tuning, and deep neural network structures such as recurrent and convolutional neural networks. This course intends to serve as a basic building block, and build full-on non-linear neural networks using Python and NumPy. This course explores Convolutional networks, RNNs, LSTM, Adam, Dropout, BatchNorm, Xavier/He initialization, and more. The course also discusses big data technologies, including methods for the acquisition, storage, and processing of high volume, high-velocity, semi- or unstructured data, as well as the practical application of such technologies in the industry."
+        },
+        {
+            "title": "Agile Project Management for AI",
+            "description": "To help managers translate AI ideas into business applications, this course covers contemporary project management and software development techniques. Agile is an approach to software development - and project management in general - that enables small teams to break down complex applications into simple components that are iteratively developed and released. Agile is particularly suitable for applications like AI that are complex and have uncertain or frequently changing business or technology requirements. We will examine agile processes and techniques, design approaches, data requirements, test and deployment, and more. We will discuss the challenges associated with changing company culture, structures and processes to support the agile approach, and the uncertainty and risks associated with AI implementations. The program provides students with 23 instructional hours, which they can apply to certification requirements for either a Certified Associate in Project Management (CAPM), or - with additional training - a Project Management Professional (PMP) designation with the Project Management Institute (PMI)."
+        },
+        {
+            "title": "AI Ethics and Policy",
+            "description": "Exploring the profound implications of AI on business and society including the ethical and policy issues, this course teaches watchfulness of ethics as an integral part of responsible technological research and innovation. It will go deep into what ethical considerations should guide business managers, computer scientists, and others who create artificially intelligent agents. It also addresses legal and policy issues related to the use of AI systems, including fairness, privacy, and liability."
+        },
+        {
+            "title": "AI Innovation & Entrepreneurship",
+            "description": "Breakthroughs in artificial intelligence have led to changes in many industries from space to consumer technology. In addition, AI has facilitated the emergence of new startups that have become very successful in a short period of time. This course covers the mindset and skills necessary to create sustainable success through innovation based on AI, regardless of whether that success is obtained inside or outside an existing enterprise. The course is conducted in an applied learning environment in which students generate AI-related business opportunities, create business models around these opportunities, and pitch these businesses by the end of the course to a panel of experts."
+        },
+        {
+            "title": "AI in Marketing",
+            "description": "This course explores the role AI can play in fundamentally rethinking the marketing function within organizations, and indeed the role it plays in organizational success. Content includes the consumer journey, segmentation, targeting, marketing mix modeling, programmatic advertising, customer retention, and more. Students will have a unique opportunity to apply AI to various marketing challenges and opportunities."
+        },
+        {
+            "title": "AI in Finance",
+            "description": "This course will provide fundamental background and skills necessary to apply AI tools to the finance industry. From an overview of the main developments in AI, and a description of technologies, to implementation considerations, students will be immersed in the implications and applications of AI in finance. The lectures and cases are designed to demonstrate how AI is fundamentally changing financial services. It includes insights from industry leaders implementing AI in financial institutions and fast-growing startups, and from investors and regulators."
+        },
+        {
+            "title": "Leading Change",
+            "description": "This course explores AI integration with business. It will focus on understanding how to use AI to enhance workforce capabilities, long-term strategic business planning, and management of change on a human-to-human level. Students will learn the roles that strategy development and change management play in successfully capitalizing on the promise of AI. Content covers the spectrum of strategic and cultural transformation from functional level impacts– such as in marketing and finance — to enterprise/corporate level changes to strategy and culture. AI in the workplace will amplify activity but successful digital transformation will require a big conversation on cultural leadership. AI Strategy and Change also prepares students for their capstone project, and provides the necessary knowledge and know-how to create new strategies for their organization and enable implementation success."
+        },
+        {
+            "title": "Reinforcement Learning and Application",
+            "description": "Reinforcement Learning (RL) is at the core of all AI and machine learning and has many theoretical and real-world applications. It enables software agents to develop behaviours that optimize a given objective in an uncertain environment and with incomplete information. Students will be introduced to successful applications of this technology in industry and, through a series of hands-on exercises using state-of-the-art software, will develop their own solutions to reinforcement learning problems. For example, students will learn how to effectively compute the return an agent gets for a particular action, and how to pick best actions based on that return. This course also explores reinforcement learning as used by practitioners in finance, investments and other areas."
+        },
+        {
+            "title": "AI Capstone Project",
+            "description": "The capstone project will allow students to demonstrate and apply their AI management learning by focusing on an area of interest including potential projects to pursue after graduation. Students will be supported by a capstone mentor as a guide and domain expert, and research assistants."
+        }
+    ]
+}
