@@ -1,48 +1,36 @@
-import functools
 import time
+from functools import lru_cache
 
 
-# Define a simple caching decorator
-def cache(func):
-    @functools.wraps(func)
-    def wrapper(*args, **kwargs):
-        cache_key = str(args) + str(kwargs)
-        if cache_key not in wrapper.cache:
-            wrapper.cache[cache_key] = func(*args, **kwargs)
-        return wrapper.cache[cache_key]
-
-    wrapper.cache = {}
-    return wrapper
-
-
-# Example function with caching
-@cache
+# Example function with built-in caching
+@lru_cache(maxsize=None)  # None means unlimited cache size
 def fibonacci(n):
     if n < 2:
         return n
     return fibonacci(n - 1) + fibonacci(n - 2)
 
 
-# Function to measure execution time
+# Using perf_counter for more precise timing
 def measure_time(func, *args):
-    start = time.time()
+    start = time.perf_counter()  # More precise than time.time()
     result = func(*args)
-    end = time.time()
+    end = time.perf_counter()
     return result, end - start
 
 
 # Demonstrate caching effect
-print("Calculating fibonacci(30) without cache:")
+print("Calculating fibonacci(300) without cache:")
 result, time_taken = measure_time(fibonacci, 300)
-print(f"Result: {result}, Time: {time_taken:.6f} seconds")
+print(f"Result: {result}")
+print(f"Time: {time_taken:.10f} seconds")  # Show more decimal places
 
-print("\nCalculating fibonacci(30) with cache:")
+print("\nCalculating fibonacci(300) with cache:")
 result, time_taken = measure_time(fibonacci, 300)
-print(f"Result: {result}, Time: {time_taken:.6f} seconds")
+print(f"Time: {time_taken:.10f} seconds")
 
 # Clear cache to show difference
-fibonacci.cache.clear()
+fibonacci.cache_clear()  # Using built-in method to clear cache
 
-print("\nCalculating fibonacci(30) after clearing cache:")
+print("\nCalculating fibonacci(300) after clearing cache:")
 result, time_taken = measure_time(fibonacci, 300)
-print(f"Result: {result}, Time: {time_taken:.6f} seconds")
+print(f"Time: {time_taken:.10f} seconds")
